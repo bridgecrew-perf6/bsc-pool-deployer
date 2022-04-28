@@ -1,0 +1,16 @@
+{
+  "name": "bsc-pool-deployer",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ kndt/bsc-pool-deployer",
+    "create-local": "graph create --node http://localhost:8020/ kndt/bsc-pool-deployer",
+    "remove-local": "graph remove --node http://localhost:8020/ kndt/bsc-pool-deployer",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 kndt/bsc-pool-deployer"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.29.0",
+    "@graphprotocol/graph-ts": "0.26.0"
+  }
+}
