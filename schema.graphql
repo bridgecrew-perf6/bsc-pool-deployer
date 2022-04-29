@@ -1,6 +1,10 @@
-type ExampleEntity @entity {
+type PoolDeployerEntity @entity {
   id: ID!
-  count: BigInt!
-  previousAdmin: Bytes! # address
-  newAdmin: Bytes! # address
+  poolCount: BigInt!
+  allPools: [Bytes!]
+}
+
+type NftPoolEntity @entity {
+  id: ID!
+  operator: Bytes!
 }

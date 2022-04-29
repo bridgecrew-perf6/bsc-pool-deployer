@@ -1,30 +1,21 @@
 [
   {
-    "inputs": [
-      { "internalType": "address", "name": "_logic", "type": "address" },
-      { "internalType": "address", "name": "admin_", "type": "address" },
-      { "internalType": "bytes", "name": "_data", "type": "bytes" }
-    ],
-    "stateMutability": "payable",
-    "type": "constructor"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
-        "name": "previousAdmin",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "newAdmin",
+        "name": "nftPool",
         "type": "address"
       }
     ],
-    "name": "AdminChanged",
+    "name": "DeployNewNftPool",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "Initialised",
     "type": "event"
   },
   {
@@ -33,67 +24,87 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "beacon",
+        "name": "previousOwner",
         "type": "address"
-      }
-    ],
-    "name": "BeaconUpgraded",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
+      },
       {
         "indexed": true,
         "internalType": "address",
-        "name": "implementation",
+        "name": "newOwner",
         "type": "address"
       }
     ],
-    "name": "Upgraded",
+    "name": "OwnershipTransferred",
     "type": "event"
   },
-  { "stateMutability": "payable", "type": "fallback" },
-  {
-    "inputs": [],
-    "name": "admin",
-    "outputs": [
-      { "internalType": "address", "name": "admin_", "type": "address" }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
   {
     "inputs": [
-      { "internalType": "address", "name": "newAdmin", "type": "address" }
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
-    "name": "changeAdmin",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "implementation",
+    "name": "allPools",
     "outputs": [
       {
         "internalType": "address",
-        "name": "implementation_",
+        "name": "",
         "type": "address"
       }
     ],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
       {
         "internalType": "address",
-        "name": "newImplementation",
+        "name": "operator",
         "type": "address"
       }
     ],
-    "name": "upgradeTo",
+    "name": "deployPool",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "poolCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -102,15 +113,13 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "newImplementation",
+        "name": "newOwner",
         "type": "address"
-      },
-      { "internalType": "bytes", "name": "data", "type": "bytes" }
+      }
     ],
-    "name": "upgradeToAndCall",
+    "name": "transferOwnership",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
-  },
-  { "stateMutability": "payable", "type": "receive" }
+  }
 ]
